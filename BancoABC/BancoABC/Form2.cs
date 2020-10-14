@@ -16,5 +16,19 @@ namespace BancoABC
         {
             InitializeComponent();
         }
+
+        private void btnConsignar_Click(object sender, EventArgs e)
+        {
+            if (txtCuentaCon.Text == "" || txtMontoCon.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese todos los datos");
+            }
+            else {
+                int numCuenta = Convert.ToInt32(txtCuentaCon.Text);
+                double monto = Convert.ToDouble(txtMontoCon.Text);
+
+               // foreach (CuentaAhorros cuenta in Form1.) 
+            }
+        }
     }
 }

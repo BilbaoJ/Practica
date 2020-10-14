@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCuentaCon = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMontoCon = new System.Windows.Forms.TextBox();
             this.btnConsignar = new System.Windows.Forms.Button();
+            this.txtMontoCon = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCuentaCon = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,21 +51,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consignación";
             // 
-            // label1
+            // btnConsignar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Número de cuenta";
+            this.btnConsignar.Location = new System.Drawing.Point(32, 132);
+            this.btnConsignar.Name = "btnConsignar";
+            this.btnConsignar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsignar.TabIndex = 4;
+            this.btnConsignar.Text = "Consignar";
+            this.btnConsignar.UseVisualStyleBackColor = true;
+            this.btnConsignar.Click += new System.EventHandler(this.btnConsignar_Click);
             // 
-            // txtCuentaCon
+            // txtMontoCon
             // 
-            this.txtCuentaCon.Location = new System.Drawing.Point(29, 41);
-            this.txtCuentaCon.Name = "txtCuentaCon";
-            this.txtCuentaCon.Size = new System.Drawing.Size(100, 20);
-            this.txtCuentaCon.TabIndex = 1;
+            this.txtMontoCon.Location = new System.Drawing.Point(32, 94);
+            this.txtMontoCon.Name = "txtMontoCon";
+            this.txtMontoCon.Size = new System.Drawing.Size(100, 20);
+            this.txtMontoCon.TabIndex = 3;
             // 
             // label2
             // 
@@ -76,21 +77,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Monto a consignar";
             // 
-            // txtMontoCon
+            // txtCuentaCon
             // 
-            this.txtMontoCon.Location = new System.Drawing.Point(32, 94);
-            this.txtMontoCon.Name = "txtMontoCon";
-            this.txtMontoCon.Size = new System.Drawing.Size(100, 20);
-            this.txtMontoCon.TabIndex = 3;
+            this.txtCuentaCon.Location = new System.Drawing.Point(29, 41);
+            this.txtCuentaCon.Name = "txtCuentaCon";
+            this.txtCuentaCon.Size = new System.Drawing.Size(100, 20);
+            this.txtCuentaCon.TabIndex = 1;
             // 
-            // btnConsignar
+            // label1
             // 
-            this.btnConsignar.Location = new System.Drawing.Point(32, 132);
-            this.btnConsignar.Name = "btnConsignar";
-            this.btnConsignar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsignar.TabIndex = 4;
-            this.btnConsignar.Text = "Consignar";
-            this.btnConsignar.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Número de cuenta";
             // 
             // Form2
             // 

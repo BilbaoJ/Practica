@@ -154,21 +154,21 @@
             // consignarToolStripMenuItem
             // 
             this.consignarToolStripMenuItem.Name = "consignarToolStripMenuItem";
-            this.consignarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consignarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.consignarToolStripMenuItem.Text = "Consignar";
             this.consignarToolStripMenuItem.Click += new System.EventHandler(this.consignarToolStripMenuItem_Click);
             // 
             // retirarToolStripMenuItem
             // 
             this.retirarToolStripMenuItem.Name = "retirarToolStripMenuItem";
-            this.retirarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.retirarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.retirarToolStripMenuItem.Text = "Retirar";
             this.retirarToolStripMenuItem.Click += new System.EventHandler(this.retirarToolStripMenuItem_Click);
             // 
             // transferirToolStripMenuItem
             // 
             this.transferirToolStripMenuItem.Name = "transferirToolStripMenuItem";
-            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.transferirToolStripMenuItem.Text = "Transferir";
             this.transferirToolStripMenuItem.Click += new System.EventHandler(this.transferirToolStripMenuItem_Click);
             // 

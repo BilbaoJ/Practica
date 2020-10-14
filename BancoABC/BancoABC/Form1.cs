@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace BancoABC
 {
+    
     public partial class Form1 : Form
     {
+        List<CuentaAhorros> cuentaAhorros = new List<CuentaAhorros>();
+
+        //extern List<CuentaAhorros> CuentaAhorros => cuentaAhorros;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +42,25 @@ namespace BancoABC
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtNumCuenta.Text == "" || txtNomTitular.Text == "" || txtIdTitular.Text == ""
+                || txtSaldo.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese todos los datos", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else {
+                int numCuenta = Convert.ToInt32(txtNumCuenta.Text);
+                string nomTitular = txtNomTitular.Text;
+                string idTitular = txtNomTitular.Text;
+                double saldo = Convert.ToDouble(txtSaldo.Text);
+
+                if (saldo >= 2000000) {
+                    saldo += (saldo * 0.05);
+                }
+
+                CuentaAhorros nuevaCuenta = new CuentaAhorros(numCuenta, nomTitular, idTitular, saldo);
+                cuentaAhorros.Add(nuevaCuenta);
+            }
 
         }
     }
