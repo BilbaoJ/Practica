@@ -1,0 +1,12 @@
+C:\Users\jessi\source\repos\BancoABC\BancoABC\bin\Debug\BancoABC.exe.config
+C:\Users\jessi\source\repos\BancoABC\BancoABC\bin\Debug\BancoABC.exe
+C:\Users\jessi\source\repos\BancoABC\BancoABC\bin\Debug\BancoABC.pdb
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.csprojAssemblyReference.cache
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.Form1.resources
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.Form2.resources
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.Form3.resources
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.Properties.Resources.resources
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.csproj.GenerateResource.cache
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.csproj.CoreCompileInputs.cache
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.exe
+C:\Users\jessi\source\repos\BancoABC\BancoABC\obj\Debug\BancoABC.pdb
