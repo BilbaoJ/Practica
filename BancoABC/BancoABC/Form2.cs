@@ -12,6 +12,9 @@ namespace BancoABC
 {
     public partial class Form2 : Form
     {
+        public double valorTotalConsignaciones = 0;
+        public string nomClienteMayorConsignacion = "";
+        public double mayorConsignacion = 0;
         public Form2()
         {
             InitializeComponent();
@@ -19,16 +22,55 @@ namespace BancoABC
 
         private void btnConsignar_Click(object sender, EventArgs e)
         {
-            if (txtCuentaCon.Text == "" || txtMontoCon.Text == "")
+            try
             {
-                MessageBox.Show("Por favor ingrese todos los datos");
-            }
-            else {
-                int numCuenta = Convert.ToInt32(txtCuentaCon.Text);
-                double monto = Convert.ToDouble(txtMontoCon.Text);
+                if (txtCuentaCon.Text == "" || txtMontoCon.Text == "")
+                {
+                    throw new Exception("Por favor ingrese todos los datos");
+                }
+                else
+                {
+                    string numCuenta = txtCuentaCon.Text;
+                    double monto = Convert.ToDouble(txtMontoCon.Text);
+                    valorTotalConsignaciones += monto;
 
-               // foreach (CuentaAhorros cuenta in Form1.) 
+                    if (monto < 0)
+                    {
+                        throw new Exception("Por favor ingrese un monto mayor a 0");
+                    }
+
+                    if (numCuenta.Length != 11)
+                    {
+                        throw new Exception("Por favor ingrese un número de cuenta válido");
+                    }
+
+                    bool encontrado = false;
+                    foreach (CuentaAhorros cuenta in Form1.cuentas)
+                    {
+                        if (cuenta.NumCuenta == numCuenta)
+                        {
+                            encontrado = true;
+                            cuenta.consignar(monto);
+
+                            if (monto > mayorConsignacion)
+                            {
+                                nomClienteMayorConsignacion = cuenta.NomTitular;
+                            }
+                        }
+                    }
+
+                    if (encontrado == false) 
+                    {
+                        throw new Exception("La cuenta ingresada no existe");
+                    }
+                }
+
             }
+            catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            
         }
     }
 }

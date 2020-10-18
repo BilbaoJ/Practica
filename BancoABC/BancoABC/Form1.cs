@@ -13,9 +13,7 @@ namespace BancoABC
     
     public partial class Form1 : Form
     {
-        List<CuentaAhorros> cuentaAhorros = new List<CuentaAhorros>();
-
-        //extern List<CuentaAhorros> CuentaAhorros => cuentaAhorros;
+        static public List<CuentaAhorros> cuentas = new List<CuentaAhorros>();
 
         public Form1()
         {
@@ -42,25 +40,50 @@ namespace BancoABC
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNumCuenta.Text == "" || txtNomTitular.Text == "" || txtIdTitular.Text == ""
-                || txtSaldo.Text == "")
+            try
             {
-                MessageBox.Show("Por favor ingrese todos los datos", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            else {
-                int numCuenta = Convert.ToInt32(txtNumCuenta.Text);
-                string nomTitular = txtNomTitular.Text;
-                string idTitular = txtNomTitular.Text;
-                double saldo = Convert.ToDouble(txtSaldo.Text);
+                if (txtNumCuenta.Text == "" || txtNomTitular.Text == "" || txtIdTitular.Text == ""
+                || txtSaldo.Text == "")
+                {
+                    throw new Exception("Por favor ingrese todos los datos");
+                }
+                else
+                {
+                    string numCuenta = txtNumCuenta.Text;
+                    string nomTitular = txtNomTitular.Text;
+                    string idTitular = txtNomTitular.Text;
+                    double saldo = Convert.ToDouble(txtSaldo.Text);
 
-                if (saldo >= 2000000) {
-                    saldo += (saldo * 0.05);
+                    if (saldo < 0) {
+                        throw new Exception("Por favor ingrese un saldo mayor a 0");
+                    }
+
+                    if (numCuenta.Length != 11) 
+                    {
+                        throw new Exception("Por favor ingrese un número de cuenta válido");
+                    }
+
+                    if (idTitular.Length != 10)
+                    {
+                        throw new Exception("Por favor ingrese un número de identificación " +
+                            "válido");
+                    }
+
+                    if (saldo >= 2000000)
+                    {
+                        saldo += (saldo * 0.05);
+                    }
+
+                    CuentaAhorros nuevaCuenta = new CuentaAhorros(numCuenta, nomTitular, idTitular, saldo);
+                    cuentas.Add(nuevaCuenta);
                 }
 
-                CuentaAhorros nuevaCuenta = new CuentaAhorros(numCuenta, nomTitular, idTitular, saldo);
-                cuentaAhorros.Add(nuevaCuenta);
             }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            
 
         }
     }

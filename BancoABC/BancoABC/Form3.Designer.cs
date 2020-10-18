@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCuentaRet = new System.Windows.Forms.TextBox();
-            this.txtMontoRet = new System.Windows.Forms.TextBox();
             this.btnRetirar = new System.Windows.Forms.Button();
+            this.txtMontoRet = new System.Windows.Forms.TextBox();
+            this.txtCuentaRet = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,14 +51,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Retiro";
             // 
-            // label1
+            // btnRetirar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Número de cuenta";
+            this.btnRetirar.Location = new System.Drawing.Point(27, 149);
+            this.btnRetirar.Name = "btnRetirar";
+            this.btnRetirar.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirar.TabIndex = 4;
+            this.btnRetirar.Text = "Retirar";
+            this.btnRetirar.UseVisualStyleBackColor = true;
+            this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
+            // 
+            // txtMontoRet
+            // 
+            this.txtMontoRet.Location = new System.Drawing.Point(27, 113);
+            this.txtMontoRet.Name = "txtMontoRet";
+            this.txtMontoRet.Size = new System.Drawing.Size(100, 20);
+            this.txtMontoRet.TabIndex = 3;
+            // 
+            // txtCuentaRet
+            // 
+            this.txtCuentaRet.Location = new System.Drawing.Point(27, 53);
+            this.txtCuentaRet.Name = "txtCuentaRet";
+            this.txtCuentaRet.Size = new System.Drawing.Size(100, 20);
+            this.txtCuentaRet.TabIndex = 2;
             // 
             // label2
             // 
@@ -69,28 +84,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Monto a retirar";
             // 
-            // txtCuentaRet
+            // label1
             // 
-            this.txtCuentaRet.Location = new System.Drawing.Point(27, 53);
-            this.txtCuentaRet.Name = "txtCuentaRet";
-            this.txtCuentaRet.Size = new System.Drawing.Size(100, 20);
-            this.txtCuentaRet.TabIndex = 2;
-            // 
-            // txtMontoRet
-            // 
-            this.txtMontoRet.Location = new System.Drawing.Point(27, 113);
-            this.txtMontoRet.Name = "txtMontoRet";
-            this.txtMontoRet.Size = new System.Drawing.Size(100, 20);
-            this.txtMontoRet.TabIndex = 3;
-            // 
-            // btnRetirar
-            // 
-            this.btnRetirar.Location = new System.Drawing.Point(27, 149);
-            this.btnRetirar.Name = "btnRetirar";
-            this.btnRetirar.Size = new System.Drawing.Size(75, 23);
-            this.btnRetirar.TabIndex = 4;
-            this.btnRetirar.Text = "Retirar";
-            this.btnRetirar.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Número de cuenta";
             // 
             // Form3
             // 

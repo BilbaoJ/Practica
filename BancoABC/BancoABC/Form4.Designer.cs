@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCuentaOrigen = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCuentaDestino = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMontoTrans = new System.Windows.Forms.TextBox();
             this.btnTransferir = new System.Windows.Forms.Button();
+            this.txtMontoTrans = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCuentaDestino = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCuentaOrigen = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,37 +55,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Transferencia";
             // 
-            // label1
+            // btnTransferir
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Número de cuenta de origen";
+            this.btnTransferir.Location = new System.Drawing.Point(20, 193);
+            this.btnTransferir.Name = "btnTransferir";
+            this.btnTransferir.Size = new System.Drawing.Size(75, 23);
+            this.btnTransferir.TabIndex = 6;
+            this.btnTransferir.Text = "Transferir";
+            this.btnTransferir.UseVisualStyleBackColor = true;
+            this.btnTransferir.Click += new System.EventHandler(this.btnTransferir_Click);
             // 
-            // txtCuentaOrigen
+            // txtMontoTrans
             // 
-            this.txtCuentaOrigen.Location = new System.Drawing.Point(20, 48);
-            this.txtCuentaOrigen.Name = "txtCuentaOrigen";
-            this.txtCuentaOrigen.Size = new System.Drawing.Size(100, 20);
-            this.txtCuentaOrigen.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Número de cuenta de destino";
-            // 
-            // txtCuentaDestino
-            // 
-            this.txtCuentaDestino.Location = new System.Drawing.Point(20, 101);
-            this.txtCuentaDestino.Name = "txtCuentaDestino";
-            this.txtCuentaDestino.Size = new System.Drawing.Size(100, 20);
-            this.txtCuentaDestino.TabIndex = 3;
+            this.txtMontoTrans.Location = new System.Drawing.Point(20, 154);
+            this.txtMontoTrans.Name = "txtMontoTrans";
+            this.txtMontoTrans.Size = new System.Drawing.Size(100, 20);
+            this.txtMontoTrans.TabIndex = 5;
             // 
             // label3
             // 
@@ -96,21 +81,37 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Monto a transferir";
             // 
-            // txtMontoTrans
+            // txtCuentaDestino
             // 
-            this.txtMontoTrans.Location = new System.Drawing.Point(20, 154);
-            this.txtMontoTrans.Name = "txtMontoTrans";
-            this.txtMontoTrans.Size = new System.Drawing.Size(100, 20);
-            this.txtMontoTrans.TabIndex = 5;
+            this.txtCuentaDestino.Location = new System.Drawing.Point(20, 101);
+            this.txtCuentaDestino.Name = "txtCuentaDestino";
+            this.txtCuentaDestino.Size = new System.Drawing.Size(100, 20);
+            this.txtCuentaDestino.TabIndex = 3;
             // 
-            // btnTransferir
+            // label2
             // 
-            this.btnTransferir.Location = new System.Drawing.Point(20, 193);
-            this.btnTransferir.Name = "btnTransferir";
-            this.btnTransferir.Size = new System.Drawing.Size(75, 23);
-            this.btnTransferir.TabIndex = 6;
-            this.btnTransferir.Text = "Transferir";
-            this.btnTransferir.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Número de cuenta de destino";
+            // 
+            // txtCuentaOrigen
+            // 
+            this.txtCuentaOrigen.Location = new System.Drawing.Point(20, 48);
+            this.txtCuentaOrigen.Name = "txtCuentaOrigen";
+            this.txtCuentaOrigen.Size = new System.Drawing.Size(100, 20);
+            this.txtCuentaOrigen.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Número de cuenta de origen";
             // 
             // Form4
             // 
