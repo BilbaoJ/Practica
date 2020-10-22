@@ -37,13 +37,17 @@
             this.txtIdTitular = new System.Windows.Forms.TextBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consignarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.retirarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transferirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.consultarEstadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,9 +57,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Número de la cuenta";
+            this.label1.Text = "Número de la cuenta ";
             // 
             // label2
             // 
@@ -122,15 +126,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.Location = new System.Drawing.Point(107, 238);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(75, 23);
-            this.btnEstadisticas.TabIndex = 9;
-            this.btnEstadisticas.Text = "Estadísticas";
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -146,7 +141,8 @@
             this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consignarToolStripMenuItem,
             this.retirarToolStripMenuItem,
-            this.transferirToolStripMenuItem});
+            this.transferirToolStripMenuItem,
+            this.consultarEstadísticasToolStripMenuItem});
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.inicioToolStripMenuItem.Text = "Menú";
@@ -154,29 +150,32 @@
             // consignarToolStripMenuItem
             // 
             this.consignarToolStripMenuItem.Name = "consignarToolStripMenuItem";
-            this.consignarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.consignarToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.consignarToolStripMenuItem.Text = "Consignar";
             this.consignarToolStripMenuItem.Click += new System.EventHandler(this.consignarToolStripMenuItem_Click);
             // 
             // retirarToolStripMenuItem
             // 
             this.retirarToolStripMenuItem.Name = "retirarToolStripMenuItem";
-            this.retirarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.retirarToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.retirarToolStripMenuItem.Text = "Retirar";
             this.retirarToolStripMenuItem.Click += new System.EventHandler(this.retirarToolStripMenuItem_Click);
             // 
             // transferirToolStripMenuItem
             // 
             this.transferirToolStripMenuItem.Name = "transferirToolStripMenuItem";
-            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.transferirToolStripMenuItem.Text = "Transferir";
             this.transferirToolStripMenuItem.Click += new System.EventHandler(this.transferirToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNumCuenta);
-            this.groupBox1.Controls.Add(this.btnEstadisticas);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtIdTitular);
             this.groupBox1.Controls.Add(this.label2);
@@ -190,6 +189,53 @@
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Crear cuenta";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(53, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "*";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(135, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(11, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(109, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(128, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "*";
+            // 
+            // consultarEstadísticasToolStripMenuItem
+            // 
+            this.consultarEstadísticasToolStripMenuItem.Name = "consultarEstadísticasToolStripMenuItem";
+            this.consultarEstadísticasToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.consultarEstadísticasToolStripMenuItem.Text = "Consultar estadísticas";
+            this.consultarEstadísticasToolStripMenuItem.Click += new System.EventHandler(this.consultarEstadísticasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -221,13 +267,17 @@
         private System.Windows.Forms.TextBox txtIdTitular;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consignarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem retirarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transferirToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem consultarEstadísticasToolStripMenuItem;
     }
 }
 

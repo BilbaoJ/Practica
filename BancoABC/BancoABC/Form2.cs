@@ -12,12 +12,18 @@ namespace BancoABC
 {
     public partial class Form2 : Form
     {
-        public double valorTotalConsignaciones = 0;
-        public string nomClienteMayorConsignacion = "";
-        public double mayorConsignacion = 0;
+        static public double valorTotalConsignaciones = 0;
+        static public string nomClienteMayorConsignacion = "";
+        static public double mayorConsignacion = 0;
         public Form2()
         {
             InitializeComponent();
+        }
+
+        public void limpiar()
+        {
+            txtCuentaCon.Text = "";
+            txtMontoCon.Text = "";
         }
 
         private void btnConsignar_Click(object sender, EventArgs e)
@@ -32,12 +38,6 @@ namespace BancoABC
                 {
                     string numCuenta = txtCuentaCon.Text;
                     double monto = Convert.ToDouble(txtMontoCon.Text);
-                    valorTotalConsignaciones += monto;
-
-                    if (monto < 0)
-                    {
-                        throw new Exception("Por favor ingrese un monto mayor a 0");
-                    }
 
                     if (numCuenta.Length != 11)
                     {
@@ -51,7 +51,8 @@ namespace BancoABC
                         {
                             encontrado = true;
                             cuenta.consignar(monto);
-
+                            valorTotalConsignaciones += monto;
+                            Form1.totalOperaciones++;
                             if (monto > mayorConsignacion)
                             {
                                 nomClienteMayorConsignacion = cuenta.NomTitular;
@@ -63,10 +64,16 @@ namespace BancoABC
                     {
                         throw new Exception("La cuenta ingresada no existe");
                     }
+
+                    limpiar();
                 }
 
             }
-            catch(Exception x)
+            catch (ArgumentOutOfRangeException x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            catch (Exception x)
             {
                 MessageBox.Show(x.Message);
             }

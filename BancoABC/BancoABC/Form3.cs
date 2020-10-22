@@ -12,10 +12,15 @@ namespace BancoABC
 {
     public partial class Form3 : Form
     {
-        public double valorTotalRetiros = 0;
+        static public double valorTotalRetiros = 0;
         public Form3()
         {
             InitializeComponent();
+        }
+        public void limpiar()
+        {
+            txtCuentaRet.Text = "";
+            txtMontoRet.Text = "";
         }
 
         private void btnRetirar_Click(object sender, EventArgs e)
@@ -30,12 +35,6 @@ namespace BancoABC
                 {
                     string numCuenta = txtCuentaRet.Text;
                     double monto = Convert.ToDouble(txtMontoRet.Text);
-                    valorTotalRetiros += monto;
-
-                    if (monto < 0)
-                    {
-                        throw new Exception("Por favor ingrese un monto mayor a 0");
-                    }
 
                     if (numCuenta.Length != 11)
                     {
@@ -48,11 +47,9 @@ namespace BancoABC
                         if (cuenta.NumCuenta == numCuenta)
                         {
                             encontrado = true;
-                            if (monto > cuenta.Saldo) 
-                            {
-                                throw new Exception("Saldo insuficiente");
-                            }
                             cuenta.retirar(monto);
+                            valorTotalRetiros += monto;
+                            Form1.totalOperaciones++;
                         }
                     }
 
@@ -60,12 +57,18 @@ namespace BancoABC
                     {
                         throw new Exception("La cuenta ingresada no existe");
                     }
+                    limpiar();
                 }
+            }
+            catch (ArgumentOutOfRangeException x)
+            {
+                MessageBox.Show(x.Message);
             }
             catch (Exception x)
             {
                 MessageBox.Show(x.Message);
             }
+            
             
         }
     }

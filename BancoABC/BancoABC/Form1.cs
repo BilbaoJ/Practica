@@ -13,13 +13,20 @@ namespace BancoABC
     
     public partial class Form1 : Form
     {
+        static public int totalOperaciones = 0;
         static public List<CuentaAhorros> cuentas = new List<CuentaAhorros>();
 
         public Form1()
         {
             InitializeComponent();
         }
-
+        public void limpiar()
+        {
+            txtNumCuenta.Text = "";
+            txtNomTitular.Text = "";
+            txtIdTitular.Text = "";
+            txtSaldo.Text = "";
+        }
         private void consignarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
@@ -38,6 +45,12 @@ namespace BancoABC
             f4.Show();
         }
 
+        private void consultarEstadísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.Show();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -51,7 +64,7 @@ namespace BancoABC
                 {
                     string numCuenta = txtNumCuenta.Text;
                     string nomTitular = txtNomTitular.Text;
-                    string idTitular = txtNomTitular.Text;
+                    string idTitular = txtIdTitular.Text;
                     double saldo = Convert.ToDouble(txtSaldo.Text);
 
                     if (saldo < 0) {
@@ -76,8 +89,9 @@ namespace BancoABC
 
                     CuentaAhorros nuevaCuenta = new CuentaAhorros(numCuenta, nomTitular, idTitular, saldo);
                     cuentas.Add(nuevaCuenta);
+                    limpiar();
                 }
-
+                
             }
             catch (Exception x)
             {

@@ -17,6 +17,46 @@ namespace BancoABC
             InitializeComponent();
         }
 
+        public void limpiar()
+        {
+            txtCuentaOrigen.Text = "";
+            txtCuentaDestino.Text = "";
+            txtMontoTrans.Text = "";
+        }
+
+        static public void transferir(string cuentaOrigen, string cuentaDestino, double monto) {
+            CuentaAhorros origen = null;
+            CuentaAhorros destino = null;
+            foreach (CuentaAhorros cuenta in Form1.cuentas)
+            {
+                if (cuenta.NumCuenta == cuentaOrigen)
+                {
+                    origen = cuenta;
+                }
+
+                if (cuenta.NumCuenta == cuentaDestino)
+                {
+                    destino = cuenta;
+                }
+            }
+
+            if (origen != null && destino != null)
+            {
+                origen.retirar(monto);
+                destino.consignar(monto);
+                Form1.totalOperaciones++;
+            }
+            else if (origen == null)
+            {
+                throw new Exception("La cuenta de origen no existe");
+            }
+            else
+            {
+                throw new Exception("La cuenta de destino no existe");
+            }
+
+        }
+
         private void btnTransferir_Click(object sender, EventArgs e)
         {
             try
@@ -32,54 +72,52 @@ namespace BancoABC
                     string cuentaDestino = txtCuentaDestino.Text;
                     double monto = Convert.ToDouble(txtMontoTrans.Text);
 
-                    if (monto < 0)
-                    {
-                        throw new Exception("Por favor ingrese un monto mayor a 0");
-                    }
-
                     if (cuentaDestino.Length != 11 || cuentaOrigen.Length != 11)
                     {
                         throw new Exception("Por favor ingrese un número de cuenta válido");
                     }
 
-                    bool origenEncontrado = false;
-                    bool destinoEncontrado = false;
+                    transferir(cuentaOrigen, cuentaDestino, monto);
+                    /*
+                    CuentaAhorros origen = null;
+                    CuentaAhorros destino = null;
                     foreach (CuentaAhorros cuenta in Form1.cuentas)
                     {
                         if (cuenta.NumCuenta == cuentaOrigen)
                         {
-                            origenEncontrado = true;
-                            if (monto > cuenta.Saldo)
-                            {
-                                throw new Exception("Saldo insuficiente");
-                            }
-                            else
-                            {
-                                cuenta.retirar(monto);
-                            }
-                            
+                            origen = cuenta;
                         }
 
                         if (cuenta.NumCuenta == cuentaDestino)
                         {
-                            destinoEncontrado = true;
-                            cuenta.consignar(monto);
+                            destino = cuenta;
                         }
                     }
 
-                    if (origenEncontrado == false)
+                    if (origen != null && destino != null)
                     {
+                        origen.retirar(monto);
+                        destino.consignar(monto);
+                        Form1.totalOperaciones++;
+                    }
+                    else if (origen == null) {
                         throw new Exception("La cuenta de origen no existe");
                     }
-
-                    if (destinoEncontrado == false)
+                    else
                     {
                         throw new Exception("La cuenta de destino no existe");
                     }
+                    */
+
+                    limpiar();
                 }
 
             }
-            catch(Exception x)
+            catch (ArgumentOutOfRangeException x)
+            {
+                MessageBox.Show(x.Message);
+            }
+            catch (Exception x)
             {
                 MessageBox.Show(x.Message);
             }

@@ -27,10 +27,25 @@ namespace BancoABC
         public double Saldo { get => saldo; set => saldo = value; }
 
         public void consignar(double monto) {
+
+            if (monto < 0)
+            {
+                throw new ArgumentOutOfRangeException("Por favor ingrese un monto mayor a 0");
+            }
             saldo += monto;
         }
 
         public void retirar(double monto) {
+            if (monto > saldo)
+            {
+                throw new ArgumentOutOfRangeException("Saldo insuficiente");
+            }
+
+            if (monto < 0)
+            {
+                throw new ArgumentOutOfRangeException("Por favor ingrese un monto mayor a 0");
+            }
+
             saldo -= monto;
         }
     }
