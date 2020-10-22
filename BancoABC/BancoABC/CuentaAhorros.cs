@@ -30,7 +30,7 @@ namespace BancoABC
 
             if (monto < 0)
             {
-                throw new ArgumentOutOfRangeException("Por favor ingrese un monto mayor a 0");
+                throw new Exception("Por favor ingrese un monto mayor a 0");
             }
             saldo += monto;
         }
@@ -38,12 +38,12 @@ namespace BancoABC
         public void retirar(double monto) {
             if (monto > saldo)
             {
-                throw new ArgumentOutOfRangeException("Saldo insuficiente");
+                throw new Exception("Saldo insuficiente");
             }
 
             if (monto < 0)
             {
-                throw new ArgumentOutOfRangeException("Por favor ingrese un monto mayor a 0");
+                throw new Exception("Por favor ingrese un monto mayor a 0");
             }
 
             saldo -= monto;

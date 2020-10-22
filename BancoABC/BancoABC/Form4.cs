@@ -78,44 +78,11 @@ namespace BancoABC
                     }
 
                     transferir(cuentaOrigen, cuentaDestino, monto);
-                    /*
-                    CuentaAhorros origen = null;
-                    CuentaAhorros destino = null;
-                    foreach (CuentaAhorros cuenta in Form1.cuentas)
-                    {
-                        if (cuenta.NumCuenta == cuentaOrigen)
-                        {
-                            origen = cuenta;
-                        }
-
-                        if (cuenta.NumCuenta == cuentaDestino)
-                        {
-                            destino = cuenta;
-                        }
-                    }
-
-                    if (origen != null && destino != null)
-                    {
-                        origen.retirar(monto);
-                        destino.consignar(monto);
-                        Form1.totalOperaciones++;
-                    }
-                    else if (origen == null) {
-                        throw new Exception("La cuenta de origen no existe");
-                    }
-                    else
-                    {
-                        throw new Exception("La cuenta de destino no existe");
-                    }
-                    */
-
+                    MessageBox.Show("Se ha realizado la transacción exitosamente", "",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
                 }
 
-            }
-            catch (ArgumentOutOfRangeException x)
-            {
-                MessageBox.Show(x.Message);
             }
             catch (Exception x)
             {

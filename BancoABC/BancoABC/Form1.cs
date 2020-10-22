@@ -89,6 +89,8 @@ namespace BancoABC
 
                     CuentaAhorros nuevaCuenta = new CuentaAhorros(numCuenta, nomTitular, idTitular, saldo);
                     cuentas.Add(nuevaCuenta);
+                    MessageBox.Show("La información ha sido guardada exitosamente", "" ,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
                 }
                 

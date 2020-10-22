@@ -64,14 +64,11 @@ namespace BancoABC
                     {
                         throw new Exception("La cuenta ingresada no existe");
                     }
-
+                    MessageBox.Show("Se ha realizado la transacción exitosamente", "",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     limpiar();
                 }
 
-            }
-            catch (ArgumentOutOfRangeException x)
-            {
-                MessageBox.Show(x.Message);
             }
             catch (Exception x)
             {
